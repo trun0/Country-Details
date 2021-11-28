@@ -1,0 +1,39 @@
+nav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dark-nav {
+    background-color: #2B3845;
+}
+
+.light-nav {
+    background-color: white;
+}
+
+.navbar-text {
+    margin-left: 5%;
+}
+
+.toggler{
+    list-style: none;
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 1150px) {
+    .navbar-text {
+        margin-left: 10%;
+    }
+    .toggler {
+        margin-right: 10%;
+    }
+}
+
+.header-container {
+    padding: 0;
+}
+
+
+.toggler:hover {
+    color: gray ;
+    cursor: pointer;
+}

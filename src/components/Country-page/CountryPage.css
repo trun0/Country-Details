@@ -1,0 +1,143 @@
+.boxA{
+    width:50%;
+    padding: 0;
+}
+.boxB{
+    width: 50%;
+    padding: 0;
+}
+.boxC{
+    width: 50%;
+    padding: 0;
+}
+.boxD{
+    width: 50%;
+    padding: 0;
+}
+
+.page-content {
+    display: flex;
+    margin-left: 0;
+}
+
+.flag-img {
+    width:75%;
+    height: 380px;
+    margin-left: 10%;
+}
+
+
+.country-item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.country-name {
+    padding: 0;
+    margin: 4% 0;
+}
+
+.neighbour-country-btn {
+    margin: 0 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.border-countries-container {
+    padding: 0;
+    margin-top: 8%;
+}
+
+.back-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 5%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.verbal-details {
+    margin-right: 10%;
+    margin-left: 0;
+}
+
+.dark-button {
+    background-color: #2B3845;
+    color: white;
+}
+
+.dark-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.light-button {
+    background-color: white;
+}
+
+.light-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+@media screen and (max-width: 1350px) {
+    .flag-img {
+        width: 75%;
+        height: 350px;
+    }
+   }
+ 
+   @media screen and (max-width: 1150px) {
+    .boxA {
+        width: 100%;
+    } 
+    .boxB {
+        width: 100%;
+    }
+    .flag-img {
+        width: 40%;
+        height: 280px;
+    }
+    .verbal-details {
+        margin-left: 10%;
+    }
+    .back-btn {
+        margin-left: 10%;
+    }
+    .border-countries-container {
+        margin-bottom: 10%;
+       }
+   }
+
+   @media screen and (max-width: 1000px) {
+    .flag-img {
+        width: 50%;
+        height: 280px;
+    }
+   }
+
+   @media screen and (max-width: 720px) {
+    .flag-img {
+        width: 60%;
+        height: 250px;
+    }
+    .boxC{
+        width: 100%;
+    }
+    .boxD {
+        width: 100%;
+    }
+   }
+    
+   @media screen and (max-width: 600px) {
+       .flag-img {
+           width: 80%;
+       }
+       .border-countries-text {
+           margin-right: 100%;
+       }
+       .neighbour-country-btn {
+           margin: 10px 10px 10px 0;
+       }
+   }

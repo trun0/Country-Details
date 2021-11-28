@@ -1,0 +1,33 @@
+.card {
+    width: 16rem;
+    margin: 0 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+@media screen and (max-width: 680px) {
+   .card {
+       margin: 0 20px;
+   }
+  }
+
+
+.card li {
+    list-style: none;
+}
+
+.card-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    margin-bottom: 30px;
+}
+
+.dark-card {
+    background-color: #2B3845;
+}
+
+.light-card {
+    background-color: white;
+}
