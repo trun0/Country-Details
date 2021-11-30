@@ -79,8 +79,8 @@ function CountryPage(props) {
         {countryDetails.map((item) => {
             return (
                 <div key={item.name.official}>
-                    <button onClick={e=>{props.gotohome()}} className={"btn back-btn " + props.theme + "-button"}> <i class="fas fa-long-arrow-alt-left"></i> Back</button>
-                    <div class="row page-content">
+                    <button onClick={e=>{props.gotohome()}} className={"btn back-btn " + props.theme + "-button"}> <i className="fas fa-long-arrow-alt-left"></i> Back</button>
+                    <div className="row page-content">
                         <div className="boxA">
                             <img className="flag-img" src={item.flags.svg} alt="CountryFlag" />
                         </div>
@@ -102,9 +102,6 @@ function CountryPage(props) {
                                 <span className="border-countries-container">
                                     <strong className="border-countries-text">Border Countries: </strong>
                                     {borderCountries.map((borderElement) => { return (<span key={borderElement}><button className={"btn neighbour-country-btn " + props.theme + "-button"} value={borderElement} onClick={showBorderCountry}>{borderElement}</button></span>); })}
-                                    {/* <button className={"btn neighbour-country-btn " + props.theme + "-button"} onClick={showBorderCountry}>qwertt</button>
-                                    <button className={"btn neighbour-country-btn " + props.theme + "-button"} onClick={showBorderCountry}>asdfg</button>
-                                    <button className={"btn neighbour-country-btn " + props.theme + "-button"} onClick={showBorderCountry}>jkjlgmxcvv</button> */}
                                 </span>
                             </div>
                         </div>
