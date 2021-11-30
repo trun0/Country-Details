@@ -24,6 +24,11 @@
     margin-bottom: 30px;
 }
 
+.country-png-image {
+    max-height: 150px;
+    min-height: 150px;
+}
+
 .dark-card {
     background-color: #2B3845;
 }

@@ -38,13 +38,17 @@
 }
 
 .neighbour-country-btn {
-    margin: 0 10px;
+    margin: 0 10px 10px 0;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .border-countries-container {
     padding: 0;
     margin-top: 8%;
+}
+
+.border-countries-text {
+    padding-right: 10px;
 }
 
 .back-btn {
@@ -94,6 +98,7 @@
     } 
     .boxB {
         width: 100%;
+        margin-top: 30px;
     }
     .flag-img {
         width: 40%;
@@ -127,6 +132,7 @@
     }
     .boxD {
         width: 100%;
+        margin-top: 20px;
     }
    }
     
@@ -136,8 +142,5 @@
        }
        .border-countries-text {
            margin-right: 100%;
-       }
-       .neighbour-country-btn {
-           margin: 10px 10px 10px 0;
        }
    }

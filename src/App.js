@@ -1,5 +1,5 @@
 import "./app.css";
-import {useState} from "react";
+import React, {useState} from "react";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import CountryPage from "./components/Country-page/CountryPage";
