@@ -2,7 +2,6 @@ import "./app.css";
 import React, {useState} from "react";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
-import CountryPage from "./components/Country-page/CountryPage";
 
 function App() { 
 
