@@ -1,6 +1,7 @@
 import "./CountryPage.css";
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function CountryPage(props) {
 
@@ -13,27 +14,36 @@ function CountryPage(props) {
 
     if (trigger) {
         setTrigger(!trigger);
-        setDetails('https://restcountries.com/v3.1/name/' + props.countryName);
+        setDetails(props.countryName);
     }
 
     function showBorderCountry(event) {
         console.log(event.target.value);
-        setDetails('https://restcountries.com/v3.1/name/' + event.target.value);
+        setDetails(event.target.value);
     }
 
 
-    async function setDetails(url) {
-        await axios.get(url)
+    async function setDetails(naam) {
+        await axios.get('https://restcountries.com/v3.1/name/'+ naam)
             .then(function (response) {
                 // handle success
                 //console.log(response.data);
-                setCountryDetails(response.data);
-                let languageArr = Object.values(response.data[0].languages);
-                for (var i = 0; i < languageArr.length - 1; i++) {
+
+                let ar;
+                for(var i = 0; i < response.data.length; i++) {
+                    if(response.data[i].name.common === naam) {
+                        ar = [response.data[i]];
+                        break;
+                    }
+                }
+                //console.log("BB" + ar);
+                setCountryDetails(ar);
+                let languageArr = Object.values(ar[0].languages);
+                for (i = 0; i < languageArr.length - 1; i++) {
                     languageArr[i] = languageArr[i] + ", ";
                 }
                 setLanguages(languageArr);
-                let currencyArr = Object.values(response.data[0].currencies);
+                let currencyArr = Object.values(ar[0].currencies);
                 for (i = 0; i < currencyArr.length; i++) {
                     currencyArr[i] = currencyArr[i].name;
                 }
@@ -41,10 +51,10 @@ function CountryPage(props) {
                     currencyArr[i] = currencyArr[i] + ", ";
                 }
                 setCurrencies(currencyArr);
-                let nativeNameArr = Object.values(response.data[0].name.nativeName);
+                let nativeNameArr = Object.values(ar[0].name.nativeName);
                 nativeNameArr[0] = nativeNameArr[0].common;
                 setNativeName(nativeNameArr[0]);
-                let borderArr = Object.values(response.data[0].borders);     
+                let borderArr = Object.values(ar[0].borders);     
                 setBorders(borderArr);           
             })
             .catch(function (error) {
@@ -79,7 +89,7 @@ function CountryPage(props) {
         {countryDetails.map((item) => {
             return (
                 <div key={item.name.official}>
-                    <button onClick={e=>{props.gotohome()}} className={"btn back-btn " + props.theme + "-button"}> <i className="fas fa-long-arrow-alt-left"></i> Back</button>
+                    <Link to="/"><button className={"btn back-btn " + props.theme + "-button"}> <i className="fas fa-long-arrow-alt-left"></i> Back</button></Link>
                     <div className="row page-content">
                         <div className="boxA">
                             <img className="flag-img" src={item.flags.svg} alt="CountryFlag" />

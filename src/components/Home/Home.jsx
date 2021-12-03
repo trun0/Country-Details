@@ -2,7 +2,6 @@ import "./home.css";
 import React, { useState } from "react";
 import CountryCard from "../Country-card/CountryCard";
 import Filter from "../Filter-by-region/Filter-by-region";
-import CountryPage from "../Country-page/CountryPage";
 import axios from "axios";
 
 
@@ -10,8 +9,7 @@ function Home(props) {
 
     const [cardsArray, setCardsArray] = useState([]);
     const [trigger, setTrigger] = useState(true);
-    const [countryPageBool, setCountryPageBool] = useState(false);
-    const [countryName, setCountryName] = useState("");
+    
     const [searchInput, setSearchInput] = useState("");
 
 
@@ -20,26 +18,13 @@ function Home(props) {
         getResults('https://restcountries.com/v3.1/all');
     }
 
-    function showCountryPage(e) {
-        console.log(e);
-        setCountryPageBool(true);
-        setCountryName(e);
-    }
-
-    function gotohome() {
-        setCountryPageBool(false);
-        // getResults('https://restcountries.com/v3.1/all');
-    }
-
     async function handleSearch(event) {
+        event.preventDefault();
         if (event.target.value === "") {
             getResults('https://restcountries.com/v3.1/all');
 
         }
-        else if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click{
+        else {
             getResults('https://restcountries.com/v3.1/name/' + event.target.value);
         }
 
@@ -71,16 +56,7 @@ function Home(props) {
             });
     }
 
-    if (countryPageBool) {
-        return (
-            <CountryPage
-                theme={props.theme}
-                countryName={countryName}
-                gotohome={gotohome}
-            />
-        );
-    }
-    else {
+   
         return (
             <div className="home">
                 <div className="search-filter">
@@ -98,7 +74,7 @@ function Home(props) {
                             <CountryCard
                                 key={item.name.official}
                                 theme={props.theme}
-                                showCountryPage={showCountryPage}
+                                showCountryPage={props.showCountryPage}
                                 imageSource={item.flags.png}
                                 countryName={item.name.common}
                                 population={item.population}
@@ -109,7 +85,6 @@ function Home(props) {
                     })}
                 </div>
             </div>);
-    }
 }
 
 export default Home;

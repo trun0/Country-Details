@@ -54,6 +54,7 @@
 
 .dark-search {
     background-color: #2B3845;
+    color: white;
 }
 
 .dark-search::placeholder {

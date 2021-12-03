@@ -10,8 +10,8 @@ function Header(props) {
                 <span className="navbar-brand navbar-text"><h2><strong>Where in the world?</strong></h2></span>
 
                 <div className="toggler" onClick={props.handleToggle}>
-                    {(props.theme === "dark") ? <i class="fas fa-moon"></i>: <i className="far fa-moon"></i> }
-                    {(window.screen.availWidth < 442) ? null: <span className="theme-toggler"> Dark Mode</span>}
+                    {(props.theme === "dark") ? <i className="fas fa-moon"></i>: <i className="far fa-moon"></i> }
+                  <span className="theme-toggler"> Dark Mode</span>
                 </div>
             </div>
         </nav>

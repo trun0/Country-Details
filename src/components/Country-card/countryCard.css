@@ -4,6 +4,10 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 680px) {
    .card {
        margin: 0 20px;
@@ -33,6 +37,14 @@
     background-color: #2B3845;
 }
 
+.dark-card:hover {
+    background-color: #3c4e5f;
+}
+
 .light-card {
     background-color: white;
+}
+
+.light-card:hover {
+    background-color: rgb(247, 247, 247);
 }

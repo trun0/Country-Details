@@ -19,6 +19,12 @@ nav {
     margin-right: 5%;
 }
 
+@media screen and (max-width: 450px) {
+    .theme-toggler {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1150px) {
     .navbar-text {
         margin-left: 10%;
