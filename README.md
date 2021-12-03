@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/trun0/REST-Countries-API-with-color-theme-switcher](https://github.com/trun0/REST-Countries-API-with-color-theme-switcher)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://rest-country-api-with-theme-switcher.netlify.app](https://rest-country-api-with-theme-switcher.netlify.app)
 
 ## My process
 
