@@ -12,6 +12,8 @@ nav {
 
 .navbar-text {
     margin-left: 5%;
+    padding-top: 10px;
+    font-size: 22px;
 }
 
 .toggler{

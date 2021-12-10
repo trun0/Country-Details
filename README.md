@@ -54,8 +54,6 @@ I learned how to use API and how to use it to get desired response. I learned ho
 
 I look forward to to learn new concepts of React and make this project better.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
 - [CSS-TRICKS](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This helped me to get hold of flexbox. I really liked the content and will use it going forward.

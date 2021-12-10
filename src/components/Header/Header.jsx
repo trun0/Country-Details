@@ -7,7 +7,7 @@ function Header(props) {
     return (
         <nav className={"navbar " + props.theme + "-nav"} >
             <div className="container-fluid header-container">
-                <span className="navbar-brand navbar-text"><h2><strong>Where in the world?</strong></h2></span>
+                <h1 className="navbar-brand navbar-text"><strong>Where in the world?</strong></h1>
 
                 <div className="toggler" onClick={props.handleToggle}>
                     {(props.theme === "dark") ? <i className="fas fa-moon"></i>: <i className="far fa-moon"></i> }

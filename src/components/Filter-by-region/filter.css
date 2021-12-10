@@ -1,7 +1,12 @@
 .filter {
   height: 3.5rem;
+  border: none;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding-left: 30px;
+}
+
+.filter:hover {
+  cursor: pointer;
 }
 
 .filter-bar {
@@ -37,4 +42,8 @@
 
 .light-filter {
   background-color: white;
+}
+
+.light-filter:focus {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
