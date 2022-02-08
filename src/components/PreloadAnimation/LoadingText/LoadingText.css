@@ -1,0 +1,21 @@
+@keyframes text {
+  0% {
+      background-color: #f3f3f3;
+  }
+50% {
+  background-color: #cecece;
+}
+  100% {
+    background-color: #f3f3f3;
+  }
+}
+.loading-text {
+  width: 150px;
+  height: 25px;
+background-color: #f3f3f3;
+  animation: text 1.5s linear infinite;
+}
+
+.text-container {
+  position: absolute;
+}

@@ -1,7 +1,8 @@
 import "./home.css";
-import React, { useState } from "react";
+import React, {useState } from "react";
 import CountryCard from "../Country-card/CountryCard";
 import Filter from "../Filter-by-region/Filter-by-region";
+import LoadingSpinner from "../PreloadAnimation/LoadingSpinner/LoadingSpinner";
 import axios from "axios";
 
 
@@ -9,9 +10,8 @@ function Home(props) {
 
     const [cardsArray, setCardsArray] = useState([]);
     const [trigger, setTrigger] = useState(true);
-    
-    const [searchInput, setSearchInput] = useState("");
-
+    const [isLoading, setIsLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState(""); 
 
     if (trigger) {
         setTrigger(!trigger);
@@ -30,7 +30,7 @@ function Home(props) {
 
     }
 
-    async function handleFilter(event) {
+    async function handleFilter(event) {       
         console.log(event.target.value);
         if (event.target.value === "") {
             getResults('https://restcountries.com/v3.1/all');
@@ -46,18 +46,20 @@ function Home(props) {
                 // handle success
                 console.log(response);
                 setCardsArray(response.data);
+                setIsLoading(false);
             })
             .catch(function (error) {
                 // handle error
                 console.log(error);
+                setIsLoading(false);
             })
             .then(function () {
                 // always executed
             });
     }
 
-   
-        return (
+        return (<div>
+            {isLoading ? <LoadingSpinner /> :
             <div className="home">
                 <div className="search-filter">
                     <div className="search-bar">
@@ -84,6 +86,7 @@ function Home(props) {
                         );
                     })}
                 </div>
+            </div>}
             </div>);
 }
 

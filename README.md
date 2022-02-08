@@ -30,6 +30,13 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode
 
+### Screenshots
+
+![Home-Light](./screenshots/home-lightmode.png)
+![Home-Dark](./screenshots/home-darkmode.png)
+![Country-Light](./screenshots/country-lightmode.png)
+![Country-Dark](./screenshots/country-darkmode.png)
+
 ### Links
 
 - Solution URL: [https://github.com/trun0/REST-Countries-API-with-color-theme-switcher](https://github.com/trun0/REST-Countries-API-with-color-theme-switcher)

@@ -93,6 +93,9 @@
    }
  
    @media screen and (max-width: 1150px) {
+    .page-content {
+        display: block;
+    }
     .boxA {
         width: 100%;
     } 
@@ -141,6 +144,6 @@
            width: 80%;
        }
        .border-countries-text {
-           margin-right: 100%;
+           display: flex;
        }
    }

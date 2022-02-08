@@ -1,5 +1,5 @@
 import "./app.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   BrowserRouter,
@@ -14,6 +14,15 @@ function App() {
 
   let [theme, setTheme] = useState("light");
   const [countryName, setCountryName] = useState("");
+
+
+  useEffect(() => {
+    let path  = window.location.pathname;
+    path = path.substring(1, path.length);
+    path = decodeURIComponent(path);
+    setCountryName(path);
+  }, []);
+  
 
   function showCountryPage(e) {
     console.log(e);
@@ -40,9 +49,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home theme={theme} showCountryPage={showCountryPage} />} />
-          <Route path="detail" element={<CountryPage
+          <Route path={encodeURIComponent(countryName)} element={<CountryPage
             theme={theme}
             countryName={countryName}
+            showCountryPage={showCountryPage}
           />} />
         </Routes>
       </BrowserRouter>
