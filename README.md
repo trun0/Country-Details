@@ -33,8 +33,11 @@ Users should be able to:
 ### Screenshots
 
 ![Home-Light](./screenshots/home-lightmode.png)
+
 ![Home-Dark](./screenshots/home-darkmode.png)
+
 ![Country-Light](./screenshots/country-lightmode.png)
+
 ![Country-Dark](./screenshots/country-darkmode.png)
 
 ### Links

@@ -76,7 +76,6 @@ function Home(props) {
                             <CountryCard
                                 key={item.name.official}
                                 theme={props.theme}
-                                showCountryPage={props.showCountryPage}
                                 imageSource={item.flags.png}
                                 countryName={item.name.common}
                                 population={item.population}

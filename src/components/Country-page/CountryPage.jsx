@@ -2,7 +2,7 @@ import "./CountryPage.css";
 import LoadingText from "../PreloadAnimation/LoadingText/LoadingText";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function CountryPage(props) {
 
@@ -13,9 +13,12 @@ function CountryPage(props) {
     const [nativeName, setNativeName] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
+
+    const params = useParams();
     useEffect(() => {
         setIsLoading(true);
-        const naam = props.countryName;
+        const naam = params.cname;
+        console.log(naam);
         axios.get('https://restcountries.com/v3.1/name/' + naam)
             .then(function (response) {
                 // handle success
@@ -53,7 +56,7 @@ function CountryPage(props) {
                 // handle error
                 console.log(error);
             })
-    }, [props.countryName]);
+    }, [params]);
 
 
     async function setBorders(borders) {
@@ -104,8 +107,8 @@ function CountryPage(props) {
                                 </div>
                                 <span className="border-countries-container">
                                     <strong className="border-countries-text">Border Countries: </strong>
-                                    {isLoading ? <LoadingText />
-                                    : borderCountries.map((borderElement) => { return (<Link to={"/" + borderElement} key={borderElement}><button className={"btn neighbour-country-btn " + props.theme + "-button"} value={borderElement} onClick={e=>{props.showCountryPage(borderElement)}}>{borderElement}</button></Link>) })
+                                    {(isLoading && borderCountries.length !== 0) ? <LoadingText />
+                                    : borderCountries.map((borderElement) => { return (<Link to={"/" + borderElement} key={borderElement}><button className={"btn neighbour-country-btn " + props.theme + "-button"} value={borderElement}>{borderElement}</button></Link>) })
                                     }
                                 </span>
                             </div>

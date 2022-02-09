@@ -6,7 +6,7 @@ function CountryCard(props) {
 
     return (
         <div >
-            <Link to={"/" + props.countryName} style={(props.theme==="dark") ? {color: "white", textDecoration:"none"} : {color: "black", textDecoration:"none" }} ><div className={"card " + props.theme + "-card"} onClick={e=>{props.showCountryPage(props.countryName)}}>
+            <Link to={"/" + props.countryName} style={(props.theme==="dark") ? {color: "white", textDecoration:"none"} : {color: "black", textDecoration:"none" }} ><div className={"card " + props.theme + "-card"}>
                 <img src={props.imageSource} className="card-img-top country-png-image" alt="..." />
                 <div className="card-body">
                     <p className="card-title"><strong> {props.countryName}</strong></p>

@@ -1,5 +1,5 @@
 import "./app.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   BrowserRouter,
@@ -12,22 +12,7 @@ import Header from "./components/Header/Header";
 
 function App() {
 
-  let [theme, setTheme] = useState("light");
-  const [countryName, setCountryName] = useState("");
-
-
-  useEffect(() => {
-    let path  = window.location.pathname;
-    path = path.substring(1, path.length);
-    path = decodeURIComponent(path);
-    setCountryName(path);
-  }, []);
-  
-
-  function showCountryPage(e) {
-    console.log(e);
-    setCountryName(e);
-  }
+  let [theme, setTheme] = useState("light");  
 
   function handleToggle() {
     if (theme === "light") {
@@ -48,11 +33,9 @@ function App() {
       <Header handleToggle={handleToggle} theme={theme} />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home theme={theme} showCountryPage={showCountryPage} />} />
-          <Route path={encodeURIComponent(countryName)} element={<CountryPage
+          <Route exact path="/" element={<Home theme={theme} />} />
+          <Route path="/:cname"  element={<CountryPage
             theme={theme}
-            countryName={countryName}
-            showCountryPage={showCountryPage}
           />} />
         </Routes>
       </BrowserRouter>
