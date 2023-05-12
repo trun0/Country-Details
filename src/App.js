@@ -12,20 +12,19 @@ import Header from "./components/Header/Header";
 
 function App() {
 
-  let [theme, setTheme] = useState("light");  
+  const [theme, setTheme] = useState("light");  
 
   function handleToggle() {
     if (theme === "light") {
-      theme = "dark";
+      setTheme("dark");
       document.body.style.backgroundColor = "#202C36";
       document.body.style.color = "white";
     }
     else {
-      theme = "light";
+      setTheme("light");
       document.body.style.backgroundColor = "#F9F9F9";
       document.body.style.color = "#111517";
     }
-    setTheme(theme);
   }
 
   return (
