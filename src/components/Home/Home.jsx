@@ -5,6 +5,11 @@ import Filter from "../Filter-by-region/Filter-by-region";
 import LoadingSpinner from "../PreloadAnimation/LoadingSpinner/LoadingSpinner";
 import axios from "axios";
 
+// We need fields query https://gitlab.com/restcountries/restcountries/-/issues/265
+const countriesQueryEndpoint = "https://restcountries.com/v3.1";
+const countriesWithSelectedFieldsEndpoint = `${countriesQueryEndpoint}/all?fields=name,population,region,capital,flags`;
+const countriesByRegionEndpoint = `${countriesQueryEndpoint}/region`;
+
 function Home(props) {
   const [cardsArray, setCardsArray] = useState([]); // countries filtered by regions or all countries
   const [countriesToDisplay, setCountriesToDisplay] = useState([]); //countries filtered by using search box
@@ -12,7 +17,7 @@ function Home(props) {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    getResults("https://restcountries.com/v3.1/all");
+    getResults(countriesWithSelectedFieldsEndpoint);
   }, []);
 
   async function handleSearch(event) {
@@ -27,9 +32,9 @@ function Home(props) {
 
   async function handleFilter(event) {
     if (event.target.value === "") {
-      getResults("https://restcountries.com/v3.1/all");
+      getResults(countriesWithSelectedFieldsEndpoint);
     } else {
-      getResults("https://restcountries.com/v3.1/region/" + event.target.value);
+      getResults(`${countriesByRegionEndpoint}/${event.target.value}`);
     }
   }
 
@@ -37,20 +42,15 @@ function Home(props) {
     await axios
       .get(url)
       .then(function (response) {
-        // handle success
-        // console.log(response);
         setCardsArray(response.data);
         setCountriesToDisplay(response.data);
         setSearchInput("");
-        setIsLoading(false);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
-        setIsLoading(false);
       })
       .then(function () {
-        // always executed
+        setIsLoading(false);
       });
   }
 
